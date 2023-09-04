@@ -1,10 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 import HeaderItem from "../../features/Header/Header";
 import LoginPgImg from "../../assets/LoginPgImg.png";
 import Button from "react-bootstrap/Button";
 
+
 import '../LoginLanding/LoginLanding.css'
 
 const LoginLanding = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <HeaderItem />
@@ -13,7 +17,7 @@ const LoginLanding = () => {
           <h1>Welcome to the Ttec BookMeet App!</h1>
           <div className="loginBtns">
             <Button style={{marginRight:'1rem'}}>SSO Login</Button>
-            <Button>Non SSO Login</Button>
+            <Button onClick={() => navigate('/nonssologin')}>Non SSO Login</Button>
           </div>
         </div>
         <div className="ImgPart">
