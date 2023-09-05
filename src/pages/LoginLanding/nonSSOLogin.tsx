@@ -14,8 +14,7 @@ import HeaderItem from "../../features/Header/Header";
 import LoginPgImg from "../../assets/LoginPgImg.png";
 import { Form, Button, Alert } from "react-bootstrap";
 import React, { useState } from 'react';
-import '../LoginLanding/LoginLanding.css'
-
+import styles from './LoginLanding.module.css'
 
 const NonSsoLogin = () => {
     const navigate = useNavigate();
@@ -59,9 +58,8 @@ const NonSsoLogin = () => {
             <HeaderItem />
             <button onClick={() => navigate('/')}>Back to Login</button>
 
-            <div className="container">
-                <div className="textPart">
-                    <h1>Welcome to the Ttec BookMeet App!</h1>
+            <div className={styles.container}>
+                <div className={styles.textPart}>
                     <div className="loginForm">
                         <Form>
                             <Form.Group controlId="fullName">
@@ -112,8 +110,8 @@ const NonSsoLogin = () => {
                         </Form>
                     </div>
                 </div>
-                <div className="ImgPart">
-                    <div className="displayImg">
+                <div className={styles.ImgPart}>
+                    <div className={styles.displayImg}>
                         <img
                             src={LoginPgImg}
                             alt=" 2 people sitting"
