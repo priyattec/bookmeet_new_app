@@ -1,0 +1,41 @@
+/* HeaderItem.module.css */
+
+/* Circular image container */
+.circleImageContainer {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  
+  /* Circular image */
+  .circleImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Additional styles for the header */
+  .header-Li {
+    text-decoration: none;
+    list-style-type: none;
+  }
+  
+  .appHeader {
+    padding: 0.5rem 2rem 0.5rem 0;
+    margin: 0;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+  .listContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .headerImage {
+    max-width: 100%; /* Adjust the maximum width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  ul, li {
+    list-style: none;
+  }

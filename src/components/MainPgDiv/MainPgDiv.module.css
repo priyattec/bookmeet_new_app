@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    /* padding: 20px; */
+    /* margin: 20px; */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    height: 15rem;
+    width: 70rem;
+    margin: auto;
+  }
+  
+  .image {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 100%; /* Make the image height match the container */
+    max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+  }
+  
+  .textPart {
+    flex: 1; /* Allow textPart to grow and occupy remaining space */
+    flex-direction: column; /* Stack children vertically */
+    padding: 2rem;
+  }
+  
+  .title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .feature {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 5px 8px 1rem 0;
+    display: inline-block; /* Make the width equal to the length of text */
+  }
+  
+  .Availability {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Make the button a block element */
+  }
+  

@@ -1,0 +1,14 @@
+.HeaderSec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    /* background-color: #f0f0f0; Change this to your desired background color */
+  }
+  
+  /* Styles for the dateTimeSec */
+  .dateTimeSec {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }

@@ -5,7 +5,7 @@ import SalarjungImg from '../assets/Salarjung.png'
 
 export const AppData = [
     {
-        index:1,
+        index:0,
         capacity:30,
         RoomName: 'Nalanda',
         description: `Training room beside Raghu's cabin`,
@@ -17,7 +17,7 @@ export const AppData = [
 
     },
     {
-        index:2,
+        index:1,
         capacity:20,
         RoomName: 'Charminar',
         description: 'will put soon',
@@ -29,7 +29,7 @@ export const AppData = [
 
     },
     {
-        index:3,
+        index:2,
         capacity:10,
         RoomName: 'Falaknuma',
         description: 'soon',
@@ -41,7 +41,7 @@ export const AppData = [
 
     },
     {
-        index:4,
+        index:3,
         capacity:10,
         RoomName: 'Salarjung',
         description: 'soon',
