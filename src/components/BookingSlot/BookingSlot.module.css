@@ -1,0 +1,23 @@
+/* BookingSlot.module.css */
+.bookingSlot {
+    background-color: #ffcc88; /* Mustard yellow background color */
+    border-radius: 1rem; /* Rounded corners */
+    padding: 1rem;
+    width: 40%;
+    position: relative; /* Needed for positioning the close button */
+    margin: 1rem;
+    border: 1px solid black;
+    
+  }
+  
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-start; /* Buttons adjacent to each other */
+    margin-top: 10px; /* Add margin between buttons and other content */
+  }
+  .button{
+    margin-right: 1rem;
+  }
+  
+  

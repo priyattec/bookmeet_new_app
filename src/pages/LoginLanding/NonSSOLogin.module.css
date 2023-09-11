@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    /* padding: 2rem; */
+    /* background-color: #ff9933; */
+    max-width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+  }
+  
+  .loginBtns {
+    display: flex;
+    justify-content: flex-start;
+    padding: 8px;
+    margin-left: 5rem;
+  }
+  
+  
+  
+  .displayImg,
+  .ImgPart {
+    background-color: #ff339c;
+    
+    /* margin-top: 2rem; */
+  }
+  
+  .textPart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    margin-left: 10rem;
+  }
+  
+  /* Add class-based styling for the buttons and image */
+  .ssoButton {
+    margin-right: 1rem;
+  }
+  
+  
+  .ImgPart {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    background-color: #a9a5ff;
+    width: 40%;
+    padding: 1rem
+ /* Allow the div to grow and take available space */
+  }
+  
+  .loginImage {
+    background-color: #a9a5ff;
+    max-width: 100%; /* Limit the image width if needed */
+    padding: 1rem;
+    /* margin-left: 1rem; */
+    /* Remove margin styles */
+  }
+  

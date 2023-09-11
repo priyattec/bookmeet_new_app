@@ -39,17 +39,17 @@ const DateTimeDisplay = () => {
   }, []);
 
   return (
-    <div className={`${styles.dateTimeDisplay}`}>
-      <div className={`${styles.box} ${styles.DayBox}`}>
+    <div className={styles.dateTimeDisplay}>
+      <div className={`${styles.box} ${styles.DayBox}`} >
         <p>{currentDay}</p>
       </div>
-      <div className={`${styles.floatRight}`}>
+      <div className={styles.floatRight}>
         <div className={`${styles.box} ${styles.DateBox}`}>
           <p>{currentDate}</p>
-          <div className={`${styles.box} ${styles.TimeBox}`}>
+        </div>
+        <div className={`${styles.box} ${styles.TimeBox}`}>
             <p>{currentTime}</p>
           </div>
-        </div>
       </div>
     </div>
   );

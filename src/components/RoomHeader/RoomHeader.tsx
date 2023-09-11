@@ -11,6 +11,7 @@ interface RoomHeaderProps {
 const RoomHeader: React.FC<RoomHeaderProps> = ({ backgroundImage, bannerText }) => {
   return (
     <div className={styles.banner} style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <div className={styles.overlay}></div> 
       <div className={styles.bannerText}>{bannerText}</div>
     </div>
   );

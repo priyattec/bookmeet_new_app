@@ -7,7 +7,7 @@
   }
   
   .DayBox {
-    background-color: rgb(48, 14, 136);
+    background-color: #ff9933;
     color: white;
     width: 100px;
     border-radius: 8px;
@@ -30,10 +30,19 @@
   }
   
   .DateBox {
-    background-color: brown;
+    background-color: #a1025a;
+    margin-bottom: .5rem;
+    display: flex;
+    align-items: center;
   }
   
   .TimeBox {
-    background-color: aqua;
+    background-color: #1a5aa5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
+  .floatRight{
+    margin-left: .5rem;
+  }

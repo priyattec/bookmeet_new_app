@@ -1,0 +1,32 @@
+.feature {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 5px 8px 1rem 0;
+    display: inline-block; /* Make the width equal to the length of text */
+  }
+.dateAndTimeContainer{
+    display: flex;
+    
+}
+.timepickers{
+    margin-left: 1rem;
+}
+.allOtherComp{
+    padding: 1.5rem;
+}
+.bookingBtn{
+    margin-top: 1rem;
+}
+.bookingSlotRow {
+    display: flex;
+    justify-content: flex-start; /* To display two BookingSlots in a row */
+     /* Add margin between rows */
+  }
+  
+  .bookingSlotContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+     /* To stack rows vertically */
+  }
