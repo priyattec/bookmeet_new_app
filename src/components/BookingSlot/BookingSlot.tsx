@@ -19,6 +19,7 @@ export default function BookingSlot(props:any) {
         <Button variant="primary" className={styles.button}>
           Teams
         </Button>
+        <p>checkoing something</p>
       </div>
     </div>
   );
