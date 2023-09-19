@@ -11,7 +11,7 @@ import RoomHeader from "../../components/RoomHeader/RoomHeader";
 import { AppData } from "../../DataSource/Data";
 import styles from "./RoomPage.module.css";
 import Button from "react-bootstrap/Button";
-import { DummyBookings } from "../../DataSource/DummyBookings";
+
 import BookingSlot from "../../components/BookingSlot/BookingSlot";
 
 import HeaderItem from "../../features/Header/Header";
@@ -31,31 +31,31 @@ const RoomPage = () => {
     );
   }
 
-  const BookingSlotDisplay = [];
-  for (let i = 0; i < DummyBookings.length; i += 2) {
-    BookingSlotDisplay.push(
-      <div className={styles.bookingSlotRow} key={i}>
-        <BookingSlot
-          key={DummyBookings[i].index}
-          BookingDate={DummyBookings[i].bookingDate}
-          organizer={DummyBookings[i].organizer}
-          orgEmail={DummyBookings[i].orgEmail}
-          timeslot={DummyBookings[i].timeslot}
+  // const BookingSlotDisplay = [];
+  // for (let i = 0; i < DummyBookings.length; i += 2) {
+  //   BookingSlotDisplay.push(
+  //     <div className={styles.bookingSlotRow} key={i}>
+  //       <BookingSlot
+  //         key={DummyBookings[i].index}
+  //         BookingDate={DummyBookings[i].bookingDate}
+  //         organizer={DummyBookings[i].organizer}
+  //         orgEmail={DummyBookings[i].orgEmail}
+  //         timeslot={DummyBookings[i].timeslot}
           
-        />
-        {DummyBookings[i + 1] && (
-          <BookingSlot
-            key={DummyBookings[i + 1].index}
-            BookingDate={DummyBookings[i + 1].bookingDate}
-            organizer={DummyBookings[i + 1].organizer}
-            orgEmail={DummyBookings[i + 1].orgEmail}
-            timeslot={DummyBookings[i + 1].timeslot}
+  //       />
+  //       {DummyBookings[i + 1] && (
+  //         <BookingSlot
+  //           key={DummyBookings[i + 1].index}
+  //           BookingDate={DummyBookings[i + 1].bookingDate}
+  //           organizer={DummyBookings[i + 1].organizer}
+  //           orgEmail={DummyBookings[i + 1].orgEmail}
+  //           timeslot={DummyBookings[i + 1].timeslot}
             
-          />
-        )}
-      </div>
-    );
-  }
+  //         />
+  //       )}
+  //     </div>
+  //   );
+  // }
   // function showtime(){
   //   if (value && value2) {
   //     console.log("time1", value.format("HH:mm")); // Display time in HH:mm format
@@ -107,9 +107,9 @@ const RoomPage = () => {
           </div>
           <h3 style={{ marginTop: "1rem" }}>Slots Booked on {SelectedDate}:</h3>
           {/* Booking Slot Div */}
-          <div className={styles.bookingSlotContainer}>
-            {BookingSlotDisplay}
-          </div>
+          
+            <BookingSlot />
+          
         </div>
       </div>
     </LocalizationProvider>
