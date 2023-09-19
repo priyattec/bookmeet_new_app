@@ -1,23 +1,29 @@
-export const DummyBookings = [
+export const DummyBookings = {
+    getData(){
+        return [
     {
-        index:0,
+        id:0,
         organizer: 'Moghe, Priya',
         orgEmail: 'priya.moghe@ttec.com',
-        bookingDate: '11.09.2023',
-        timeslot:'3:30pm to 4:00pm'
+        bookingDate: '2023-09-11',
+        timeslot:'3:30pm - 4:00pm'
     },
     {
-        index:1,
+        id:1,
         organizer: 'Verma, Shantanu',
         orgEmail: 'shantanu.verma@ttec.com',
-        bookingDate: '11.09.2023',
-        timeslot:'2:30pm to 3:00pm'
+        bookingDate: '2023-09-11',
+        timeslot:'2:30pm - 3:00pm'
     },
     {
-        index:2,
+        id:2,
         organizer: 'Verma, Ankur',
         orgEmail: 'ankur.verma@ttec.com',
-        bookingDate: '11.09.2023',
-        timeslot:'2:0pm to 2:30pm'
+        bookingDate: '2023-09-11',
+        timeslot:'2:00pm - 2:30pm'
     }
-]
+];
+},
+getOrganizers() {
+    return Promise.resolve(this.getData().slice(0,50));
+}}

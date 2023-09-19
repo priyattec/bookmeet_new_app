@@ -12,6 +12,7 @@ const NonSSOLogin = () => {
       <div className={styles.container}>
         <div className={styles.textPart}>
         form area
+        <Button variant="primary" onClick={()=>navigate('/')}>Go Back</Button>
         </div>
         <div className={styles.ImgPart}>
           <div className={styles.displayImg}>

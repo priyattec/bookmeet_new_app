@@ -6,7 +6,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TimePicker } from "@mui/x-date-pickers/TimePicker";
-
+import FormikDoc from "./EmailInput";
 import RoomHeader from "../../components/RoomHeader/RoomHeader";
 import { AppData } from "../../DataSource/Data";
 import styles from "./RoomPage.module.css";
@@ -102,10 +102,13 @@ const RoomPage = () => {
           </div>
 
           {/* Date and time pickers end */}
+          <div style={{margin: "1rem 0"}}>
+<FormikDoc />
+          </div>
           <div className={styles.bookingBtn}>
             <Button variant="primary">Book Now</Button>
           </div>
-          <h3 style={{ marginTop: "1rem" }}>Slots Booked on {SelectedDate}:</h3>
+          <h3 style={{ marginTop: "1rem", marginBottom:"1rem" }}>Slots Booked on {SelectedDate}:</h3>
           {/* Booking Slot Div */}
           
             <BookingSlot />

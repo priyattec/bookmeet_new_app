@@ -14,6 +14,7 @@ import LoginLanding from './pages/LoginLanding/loginLanding';
 import NonSSOLogin from './pages/LoginLanding/nonSSOLogin';
 import MainPage from './pages/MainPage/mainPage';
 import RoomPage from './pages/RoomPage/RoomPage';
+import BookingHistory from './components/BookingHistory/BookingHistory';
 function App() {
   return (
     
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<LoginLanding />} />
         <Route path = '/nonssologin' element = {<NonSSOLogin />} />
         <Route path = '/MainPage' element = {<MainPage />} />
+        <Route path = '/BookingHistory' element = {<BookingHistory />} />
         <Route path = '/room/:roomIndex' element={<RoomPage />} />
       </Routes> 
     </div>

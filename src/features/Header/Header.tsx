@@ -3,6 +3,7 @@ import Image from "react-bootstrap/Image";
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from "react-router";
 // import { Menubar } from 'primereact/menubar';
 import styles from "./Header.module.css";
 import HeaderImg from "../../assets/HeaderLogo.png";
@@ -18,6 +19,7 @@ const HeaderItem = (props: any) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+ const navigate = useNavigate()
   return (
     <nav className={styles.appHeader}>
       <ul className={styles.listContainer}>
@@ -54,7 +56,7 @@ const HeaderItem = (props: any) => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Booking History</MenuItem>
+        <MenuItem onClick={() => navigate('/BookingHistory')}>Booking History</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
           

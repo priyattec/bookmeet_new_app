@@ -1,40 +1,42 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 // import { classNames } from "primereact/utils";
 import { FilterMatchMode } from "primereact/api";
 import { DataTable, DataTableFilterMeta } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
-import { DummyBookings } from "../../DataSource/DummyBookings";
+import { BookingHistoryDummyData } from "../../DataSource/BookingHistoryData";
+import HeaderItem from "../../features/Header/Header";
 
-interface DummyBookingData {
+
+interface BookingHistoryData {
   id: number;
-  organizer: string;
-  orgEmail: string;
-  bookingDate: string;
-  timeslot: string;
+  RoomName: string,
+  BookingDate: string,
+  TimeSlot: string
 }
 
-export default function BookingSlot() {
-  const [organizers, setOrganizers] = useState<DummyBookingData[]>([]);
+export default function BookingHistory() {
+    const navigate = useNavigate()
+  const [roomname, setroomname] = useState<BookingHistoryData[]>([]);
   const [filters, setFilters] = useState<DataTableFilterMeta>({
     global: { value: null, matchMode: FilterMatchMode.CONTAINS },
-    organizers: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
-    orgEmails: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
-    bookingDate: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
-    timeslot: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
+    RoomName: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
+    BookingDate: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
+    TimeSlot: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
   });
   const [loading, setLoading] = useState<boolean>(true);
   const [globalFilterValue, setGlobalFilterValue] = useState<string>("");
 
   useEffect(() => {
-    DummyBookings.getOrganizers().then((data: DummyBookingData[]) => {
-      setOrganizers(getOrganizers(data));
+    BookingHistoryDummyData.getBookings().then((data: BookingHistoryData[]) => {
+      setroomname(getRoomname(data));
       setLoading(false);
     });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const getOrganizers = (data: DummyBookingData[]) => {
+  const getRoomname = (data: BookingHistoryData[]) => {
     return [...(data || [])].map((d) => {
       // @ts-ignore
       d.bookingDatedate = new Date(d.bookingDate);
@@ -68,30 +70,37 @@ export default function BookingSlot() {
       </div>
     );
   };
-  const actionsBodyTemplate = (rowData: DummyBookingData) => {
+  const actionsBodyTemplate = (rowData: BookingHistoryData) => {
     return (
       <div >
-        <Button severity="info" onClick={() => handleOutlookClick(rowData)} style={{marginRight: '.5rem'}}>Outlook</Button>
-        <Button severity="info" onClick={() => handleTeamsClick(rowData)}>Teams</Button>
+        <Button severity="danger" onClick={() => handleOutlookClick(rowData)} style={{marginRight: '.5rem'}}>Delete</Button>
+        <Button severity="warning" onClick={() => handleTeamsClick(rowData)}>Reschedule</Button>
       </div>
     );
   };
 
-  const handleOutlookClick = (rowData: DummyBookingData) => {
+  const handleOutlookClick = (rowData: BookingHistoryData) => {
     // Handle the Outlook button click for the specific row here
     console.log("Outlook button clicked for row with ID:", rowData.id);
   };
 
-  const handleTeamsClick = (rowData: DummyBookingData) => {
+  const handleTeamsClick = (rowData: BookingHistoryData) => {
     // Handle the Teams button click for the specific row here
     console.log("Teams button clicked for row with ID:", rowData.id);
   };
   const header = renderHeader();
 
   return (
+    <div>
+        <HeaderItem />
+        <div style={{display:'flex', justifyContent: 'flex-start',marginBottom:'1rem', marginTop: '1rem'}}>
+        <Button label="Main Page" severity="info" outlined onClick={() =>navigate('/MainPage')} style={{marginLeft:'1rem'}}/>
+        <h1 style={{textAlign:'center'}}>Booking History</h1>
+        </div>
+        
     <div className="card">
       <DataTable
-        value={organizers}
+        value={roomname}
         paginator
         rows={10}
         dataKey="id"
@@ -99,40 +108,33 @@ export default function BookingSlot() {
         filterDisplay="row"
         loading={loading}
         globalFilterFields={[
-          "organizer",
-          "orgEmail",
-          "bookingDate",
-          "timeslot",
+          "RoomName",
+          "BookingDate",
+          "TimeSlot",
         ]}
         header={header}
-        emptyMessage="No organizers found."
+        emptyMessage="No rooms found."
+        
       >
         <Column
-          field="organizer"
-          header="Organizer"
+          field="RoomName"
+          header="RoomName"
           filter
-          filterPlaceholder="Search by name"
-          style={{ minWidth: "12rem" }}
+          filterPlaceholder="Search by room name"
+          style={{ minWidth: "12rem", padding: '1rem' }}
         />
+    
         <Column
-          field="orgEmail"
-          header="Organizer Email"
-          filterField="orgEmail"
-          style={{ minWidth: "12rem" }}
-          filter
-          filterPlaceholder="Search by email"
-        />
-        <Column
-          field="bookingDate"
+          field="BookingDate"
           header="Booking Date"
-          filterField="bookingDate"
+          filterField="BookingDate"
           showFilterMenu={false}
           filterMenuStyle={{ width: "14rem" }}
           style={{ minWidth: "14rem" }}
           
         />
         <Column
-          field="timeslot"
+          field="TimeSlot"
           header="Time Slot"
           showFilterMenu={false}
           filterMenuStyle={{ width: "14rem" }}
@@ -146,6 +148,7 @@ export default function BookingSlot() {
           body={actionsBodyTemplate}
         />
       </DataTable>
+    </div>
     </div>
   );
 }
